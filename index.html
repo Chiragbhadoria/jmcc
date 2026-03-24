@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jai Shree Mahakal Cricket Club | JSMCC</title>
+    <title>Jai Shree Mahakal Cricket Club | JMCC</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -14,200 +14,214 @@
             background-size: cover; 
             background-position: center; 
         }
-        .player-card:hover img { transform: scale(1.05); }
+        .player-card:hover img { transform: scale(1.1) rotate(2deg); }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); }
     </style>
 </head>
 <body class="bg-gray-950 text-white">
 
-    <nav class="sticky top-0 z-50 bg-black/90 backdrop-blur-md border-b border-orange-600/30 px-6 py-4">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <img src="logo.png" alt="Logo" class="h-10 w-10 rounded-full border border-orange-500 object-cover bg-gray-800">
-                <span class="text-xl font-black tracking-tighter">JSM <span class="text-orange-500">CC</span></span>
-            </div>
-            <a href="https://wa.me/" class="text-sm font-bold bg-orange-600 hover:bg-orange-700 px-4 py-2 rounded-full transition shadow-lg shadow-orange-900/20">Contact Us</a>
+<nav class="sticky top-0 z-50 bg-black/90 backdrop-blur-md border-b border-orange-600/30 px-6 py-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <img src="logo.png" alt="Logo" class="h-10 w-10 rounded-full border border-orange-500 object-cover bg-gray-800">
+            <span class="text-xl font-black tracking-tighter uppercase">JM <span class="text-orange-500">CC</span></span>
         </div>
-    </nav>
+        <div class="hidden md:flex gap-6 text-xs font-bold uppercase tracking-widest">
+            <a href="#squad" class="hover:text-orange-500">Squad</a>
+            <a href="#stats" class="hover:text-orange-500 text-orange-500">Live Stats</a>
+        </div>
+        <a href="https://wa.me/" class="text-sm font-bold bg-orange-600 hover:bg-orange-700 px-4 py-2 rounded-full transition shadow-lg shadow-orange-900/20 text-white">Contact Us</a>
+    </div>
+</nav>
 
-    <header class="hero-bg h-[40vh] flex flex-col justify-center items-center text-center px-4">
-        <h1 class="text-4xl md:text-6xl font-black italic tracking-tight mb-2">JAI SHREE MAHAKAL</h1>
-        <p class="text-orange-500 font-bold tracking-[0.4em] text-xs md:text-sm uppercase">Cricket Club • Gwalior</p>
-        <div class="mt-6 h-1 w-16 bg-orange-600 rounded-full"></div>
-    </header>
+<header class="hero-bg h-[45vh] flex flex-col justify-center items-center text-center px-4">
+    <h1 class="text-5xl md:text-7xl font-black italic tracking-tight mb-2">JAI SHREE MAHAKAL</h1>
+    <p class="text-orange-500 font-bold tracking-[0.4em] text-xs md:text-sm uppercase">Cricket Club • Gwalior</p>
+    <div class="mt-8 flex gap-4">
+        <a href="https://cricheroes.in/" target="_blank" class="glass border border-orange-500/50 px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-orange-600 transition">View Team on CricHeroes</a>
+    </div>
+</header>
 
-    <section class="py-16 px-6 max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-black uppercase">The Playing XV</h2>
-            <p class="text-gray-500 text-sm mt-2">Season 2026 Squad</p>
+<section id="squad" class="py-20 px-6 max-w-7xl mx-auto">
+    <div class="text-center mb-20">
+        <h2 class="text-4xl font-black uppercase tracking-tighter">The Playing XV</h2>
+        <div class="mt-4 h-1 w-20 bg-orange-600 mx-auto rounded-full"></div>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-16 gap-x-8">
+
+        <div class="player-card flex flex-col items-center group">
+            <a href="#" class="relative mb-4">
+                <div class="absolute -inset-2 bg-orange-600 rounded-full blur opacity-0 group-hover:opacity-20 transition duration-500"></div>
+                <img src="pankaj_sharma.png" class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover shadow-2xl transition duration-500">
+                <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-bold h-8 w-8 flex items-center justify-center rounded-full border-2 border-gray-950">01</span>
+            </a>
+            <h3 class="font-bold text-center text-lg">Pankaj Sharma</h3>
+            <p class="text-[10px] uppercase tracking-widest text-orange-500 font-bold">Captain / All Rounder</p>
+            <a href="#" class="mt-2 text-[9px] text-gray-500 hover:text-white uppercase tracking-tighter">View Stats →</a>
         </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-12">
-            
-            <div class="player-card flex flex-col items-center group">
-                <div class="relative mb-4">
-                    <div class="absolute -inset-1 bg-orange-600 rounded-full blur opacity-10 group-hover:opacity-40 transition"></div>
-                    <img src="pankaj_sharma.png" class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover shadow-2xl transition duration-300">
-                    <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-bold h-7 w-7 flex items-center justify-center rounded-full border-2 border-gray-950">01</span>
-                </div>
-                <h3 class="font-bold text-center group-hover:text-orange-500 transition">Pankaj Sharma</h3>
-                <p class="text-[9px] uppercase tracking-widest text-gray-500 font-bold">Captain/ ALL ROUNDER</p>
+        <div class="player-card flex flex-col items-center group">
+            <div class="relative mb-4">
+                <img src="neeraj_sharma.png" class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover transition duration-500">
+                <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-bold h-8 w-8 flex items-center justify-center rounded-full border-2 border-gray-950">07</span>
             </div>
-
-            <div class="player-card flex flex-col items-center group">
-                <div class="relative mb-4">
-                    <div class="absolute -inset-1 bg-orange-600 rounded-full blur opacity-10 group-hover:opacity-40 transition"></div>
-                    <img src="neeraj_sharma.png" class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover shadow-2xl transition duration-300">
-                    <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-bold h-7 w-7 flex items-center justify-center rounded-full border-2 border-gray-950">07</span>
-                </div>
-                <h3 class="font-bold text-center group-hover:text-orange-500 transition">Neeraj Sharma</h3>
-                <p class="text-[9px] uppercase tracking-widest text-gray-500 font-bold">BATSMAN</p>
-            </div>
-
-            <div class="player-card flex flex-col items-center group">
-                <div class="relative mb-4">
-                    <div class="absolute -inset-1 bg-orange-600 rounded-full blur opacity-10 group-hover:opacity-40 transition"></div>
-                    <img src="ratnesh_dixit.png" class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover shadow-2xl transition duration-300">
-                    <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-bold h-7 w-7 flex items-center justify-center rounded-full border-2 border-gray-950">18</span>
-                </div>
-                <h3 class="font-bold text-center group-hover:text-orange-500 transition">Ratnesh Dixit</h3>
-                <p class="text-[9px] uppercase tracking-widest text-gray-500 font-bold">BATSMAN</p>
-            </div>
-
-            <div class="player-card flex flex-col items-center group">
-                <div class="relative mb-4">
-                    <div class="absolute -inset-1 bg-orange-600 rounded-full blur opacity-10 group-hover:opacity-40 transition"></div>
-                    <img src="shrikant_pachori.png" class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover shadow-2xl transition duration-300">
-                    <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-bold h-7 w-7 flex items-center justify-center rounded-full border-2 border-gray-950">33</span>
-                </div>
-                <h3 class="font-bold text-center group-hover:text-orange-500 transition">Shrikant Pachori</h3>
-                <p class="text-[9px] uppercase tracking-widest text-gray-500 font-bold">Fast Bowler</p>
-            </div>
-
-            <div class="player-card flex flex-col items-center group">
-                <div class="relative mb-4">
-                    <div class="absolute -inset-1 bg-orange-600 rounded-full blur opacity-10 group-hover:opacity-40 transition"></div>
-                    <img src="aashu_jadon.png" class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover shadow-2xl transition duration-300">
-                    <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-bold h-7 w-7 flex items-center justify-center rounded-full border-2 border-gray-950">10</span>
-                </div>
-                <h3 class="font-bold text-center group-hover:text-orange-500 transition">Aashu Jadon</h3>
-                <p class="text-[9px] uppercase tracking-widest text-gray-500 font-bold">ALL ROUNDER</p>
-            </div>
-
-            <div class="player-card flex flex-col items-center group">
-                <div class="relative mb-4">
-                    <div class="absolute -inset-1 bg-orange-600 rounded-full blur opacity-10 group-hover:opacity-40 transition"></div>
-                    <img src="sonu_sharma.png" class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover shadow-2xl transition duration-300">
-                    <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-bold h-7 w-7 flex items-center justify-center rounded-full border-2 border-gray-950">10</span>
-                </div>
-                <h3 class="font-bold text-center group-hover:text-orange-500 transition">Sonu Sharma</h3>
-                <p class="text-[9px] uppercase tracking-widest text-gray-500 font-bold">BATSMAN</p>
-            </div>
-
-            <div class="player-card flex flex-col items-center group">
-                <div class="relative mb-4">
-                    <div class="absolute -inset-1 bg-orange-600 rounded-full blur opacity-10 group-hover:opacity-40 transition"></div>
-                    <img src="kailash_singh.png" class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover shadow-2xl transition duration-300">
-                    <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-bold h-7 w-7 flex items-center justify-center rounded-full border-2 border-gray-950">10</span>
-                </div>
-                <h3 class="font-bold text-center group-hover:text-orange-500 transition">Kailash Singh</h3>
-                <p class="text-[9px] uppercase tracking-widest text-gray-500 font-bold">BATSMAN</p>
-            </div>
-
-            <div class="player-card flex flex-col items-center group">
-                <div class="relative mb-4">
-                    <div class="absolute -inset-1 bg-orange-600 rounded-full blur opacity-10 group-hover:opacity-40 transition"></div>
-                    <img src="raunak_singh.png" class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover shadow-2xl transition duration-300">
-                    <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-bold h-7 w-7 flex items-center justify-center rounded-full border-2 border-gray-950">10</span>
-                </div>
-                <h3 class="font-bold text-center group-hover:text-orange-500 transition">Raunak Singh</h3>
-                <p class="text-[9px] uppercase tracking-widest text-gray-500 font-bold">ALL ROUNER</p>
-            </div>
-
-            <div class="player-card flex flex-col items-center group">
-                <div class="relative mb-4">
-                    <div class="absolute -inset-1 bg-orange-600 rounded-full blur opacity-10 group-hover:opacity-40 transition"></div>
-                    <img src="aman_sikarwar.png" class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover shadow-2xl transition duration-300">
-                    <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-bold h-7 w-7 flex items-center justify-center rounded-full border-2 border-gray-950">10</span>
-                </div>
-                <h3 class="font-bold text-center group-hover:text-orange-500 transition">Aman Singh Sikarwar</h3>
-                <p class="text-[9px] uppercase tracking-widest text-gray-500 font-bold">ALL ROUNDER</p>
-            </div>
-
-            <div class="player-card flex flex-col items-center group">
-                <div class="relative mb-4">
-                    <div class="absolute -inset-1 bg-orange-600 rounded-full blur opacity-10 group-hover:opacity-40 transition"></div>
-                    <img src="deepak_yadav.png" class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover shadow-2xl transition duration-300">
-                    <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-bold h-7 w-7 flex items-center justify-center rounded-full border-2 border-gray-950">10</span>
-                </div>
-                <h3 class="font-bold text-center group-hover:text-orange-500 transition">Deepak Yadav</h3>
-                <p class="text-[9px] uppercase tracking-widest text-gray-500 font-bold">ALL ROUNDER</p>
-            </div>
-
-            <div class="player-card flex flex-col items-center group">
-                <div class="relative mb-4">
-                    <div class="absolute -inset-1 bg-orange-600 rounded-full blur opacity-10 group-hover:opacity-40 transition"></div>
-                    <img src="p5.jpg" class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover shadow-2xl transition duration-300">
-                    <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-bold h-7 w-7 flex items-center justify-center rounded-full border-2 border-gray-950">10</span>
-                </div>
-                <h3 class="font-bold text-center group-hover:text-orange-500 transition">Ankit Dhanoriya</h3>
-                <p class="text-[9px] uppercase tracking-widest text-gray-500 font-bold">ALL ROUNDER</p>
-            </div>
-
-            <div class="player-card flex flex-col items-center group">
-                <div class="relative mb-4">
-                    <div class="absolute -inset-1 bg-orange-600 rounded-full blur opacity-10 group-hover:opacity-40 transition"></div>
-                    <img src="indar_solanki.png" class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover shadow-2xl transition duration-300">
-                    <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-bold h-7 w-7 flex items-center justify-center rounded-full border-2 border-gray-950">10</span>
-                </div>
-                <h3 class="font-bold text-center group-hover:text-orange-500 transition">Inder Solanki</h3>
-                <p class="text-[9px] uppercase tracking-widest text-gray-500 font-bold">BATSMAN</p>
-            </div>
-
-            <div class="player-card flex flex-col items-center group">
-                <div class="relative mb-4">
-                    <div class="absolute -inset-1 bg-orange-600 rounded-full blur opacity-10 group-hover:opacity-40 transition"></div>
-                    <img src="chirag_ bhadoria.png" class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover shadow-2xl transition duration-300">
-                    <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-bold h-7 w-7 flex items-center justify-center rounded-full border-2 border-gray-950">10</span>
-                </div>
-                <h3 class="font-bold text-center group-hover:text-orange-500 transition">Chirag Bhadoria</h3>
-                <p class="text-[9px] uppercase tracking-widest text-gray-500 font-bold">BATSMAN</p>
-            </div>
-
-            <div class="player-card flex flex-col items-center group">
-                <div class="relative mb-4">
-                    <div class="absolute -inset-1 bg-orange-600 rounded-full blur opacity-10 group-hover:opacity-40 transition"></div>
-                    <img src="shivam_sharma.png" class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover shadow-2xl transition duration-300">
-                    <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-bold h-7 w-7 flex items-center justify-center rounded-full border-2 border-gray-950">10</span>
-                </div>
-                <h3 class="font-bold text-center group-hover:text-orange-500 transition">Shivam Sharma</h3>
-                <p class="text-[9px] uppercase tracking-widest text-gray-500 font-bold">BATSMAN</p>
-            </div>
-
-            <!-- <div class="player-card flex flex-col items-center group">
-                <div class="relative mb-4">
-                    <div class="absolute -inset-1 bg-orange-600 rounded-full blur opacity-10 group-hover:opacity-40 transition"></div>
-                    <img src="p5.jpg" class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover shadow-2xl transition duration-300">
-                    <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-bold h-7 w-7 flex items-center justify-center rounded-full border-2 border-gray-950">10</span>
-                </div>
-                <h3 class="font-bold text-center group-hover:text-orange-500 transition">Sonu Sharma</h3>
-                <p class="text-[9px] uppercase tracking-widest text-gray-500 font-bold">Spin Bowler</p>
-            </div> -->
-
-            <div class="col-span-full py-10 text-center text-gray-700 text-xs italic">
-                (Add 10 more player cards here following the same format)
-            </div>
-
+            <h3 class="font-bold text-center text-lg">Neeraj Sharma</h3>
+            <p class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">BATSMAN</p>
         </div>
-    </section>
 
-    <footer class="bg-black border-t border-gray-900 py-12 text-center">
-        <div class="flex justify-center gap-6 mb-8 text-xl text-gray-500">
-            <a href="#" class="hover:text-orange-500"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="#" class="hover:text-orange-500"><i class="fa-brands fa-instagram"></i></a>
+        <div class="player-card flex flex-col items-center group">
+            <div class="relative mb-4">
+                <img src="ratnesh_dixit.png" class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover transition duration-500">
+                <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-bold h-8 w-8 flex items-center justify-center rounded-full border-2 border-gray-950">7</span>
+            </div>
+            <h3 class="font-bold text-center text-lg">Ratnesh Dixit</h3>
+            <p class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">BATSMAN</p>
         </div>
-        <p class="text-xs text-gray-600 uppercase tracking-widest">&copy; 2026 JSM Cricket Club • Gwalior</p>
-        <p class="text-[10px] text-gray-800 mt-2 italic font-serif">Har Har Mahadev</p>
-    </footer>
+
+        <div class="player-card flex flex-col items-center group">
+            <div class="relative mb-4">
+                <img src="shrikant_pachori.png" class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover transition duration-500">
+                <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-bold h-8 w-8 flex items-center justify-center rounded-full border-2 border-gray-950">22</span>
+            </div>
+            <h3 class="font-bold text-center text-lg">Shrikant Pachori</h3>
+            <p class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Fast Bowler</p>
+        </div>
+
+        <div class="player-card flex flex-col items-center group">
+            <div class="relative mb-4">
+                <img src="aashu_jadon.png" class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover transition duration-500">
+                <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-bold h-8 w-8 flex items-center justify-center rounded-full border-2 border-gray-950">65</span>
+            </div>
+            <h3 class="font-bold text-center text-lg">Aashu Jadon</h3>
+            <p class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">All Rounder</p>
+        </div>
+
+        <div class="player-card flex flex-col items-center group">
+            <div class="relative mb-4">
+                <img src="sonu_sharma.png" class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover transition duration-500">
+                <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-bold h-8 w-8 flex items-center justify-center rounded-full border-2 border-gray-950">10</span>
+            </div>
+            <h3 class="font-bold text-center text-lg">Sonu Sharma</h3>
+            <p class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">BATSMAN</p>
+        </div>
+
+        <div class="player-card flex flex-col items-center group">
+            <div class="relative mb-4">
+                <img src="kailash_singh.png" class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover transition duration-500">
+                <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-bold h-8 w-8 flex items-center justify-center rounded-full border-2 border-gray-950">08</span>
+            </div>
+            <h3 class="font-bold text-center text-lg">Kailash Singh</h3>
+            <p class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">BATSMAN</p>
+        </div>
+
+        <div class="player-card flex flex-col items-center group">
+            <div class="relative mb-4">
+                <img src="raunak_singh.png" class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover transition duration-500">
+                <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-bold h-8 w-8 flex items-center justify-center rounded-full border-2 border-gray-950">11</span>
+            </div>
+            <h3 class="font-bold text-center text-lg">Raunak Singh</h3>
+            <p class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">All Rounder</p>
+        </div>
+
+        <div class="player-card flex flex-col items-center group">
+            <div class="relative mb-4">
+                <img src="aman_sikarwar.png" class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover transition duration-500">
+                <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-bold h-8 w-8 flex items-center justify-center rounded-full border-2 border-gray-950">17</span>
+            </div>
+            <h3 class="font-bold text-center text-lg">Aman Singh Sikarwar</h3>
+            <p class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">All Rounder</p>
+        </div>
+
+        <div class="player-card flex flex-col items-center group">
+            <div class="relative mb-4">
+                <img src="deepak_yadav.png" class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover transition duration-500">
+                <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-bold h-8 w-8 flex items-center justify-center rounded-full border-2 border-gray-950">21</span>
+            </div>
+            <h3 class="font-bold text-center text-lg">Deepak Yadav</h3>
+            <p class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">All Rounder</p>
+        </div>
+
+        <div class="player-card flex flex-col items-center group">
+            <div class="relative mb-4">
+                <img src="p5.jpg" class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover transition duration-500">
+                <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-bold h-8 w-8 flex items-center justify-center rounded-full border-2 border-gray-950">25</span>
+            </div>
+            <h3 class="font-bold text-center text-lg">Ankit Dhanoriya</h3>
+            <p class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">All Rounder</p>
+        </div>
+
+        <div class="player-card flex flex-col items-center group">
+            <div class="relative mb-4">
+                <img src="indar_solanki.png" class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover transition duration-500">
+                <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-bold h-8 w-8 flex items-center justify-center rounded-full border-2 border-gray-950">12</span>
+            </div>
+            <h3 class="font-bold text-center text-lg">Inder Solanki</h3>
+            <p class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">BATSMAN</p>
+        </div>
+
+        <div class="player-card flex flex-col items-center group">
+            <a href="https://cricheroes.com/player-profile/294942/chirag-bhadoria" target="_blank" class="relative mb-4 block">
+                <div class="absolute -inset-2 bg-orange-600 rounded-full blur opacity-0 group-hover:opacity-20 transition duration-500"></div>
+                <img src="chirag_bhadoria.png" class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover transition duration-500">
+                <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-bold h-8 w-8 flex items-center justify-center rounded-full border-2 border-gray-950">03</span>
+            </a>
+
+            <h3 class="font-bold text-center text-lg">Chirag Bhadoria</h3>
+            <p class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Batsman</p>
+
+            <a href="https://cricheroes.com/player-profile/294942/chirag-bhadoria" target="_blank"
+               class="mt-3 text-[9px] bg-gray-900 hover:bg-orange-600 text-gray-400 hover:text-white px-3 py-1 rounded-full border border-gray-800 transition uppercase tracking-tighter">
+                View Career Stats →
+            </a>
+        </div>
+
+        <div class="player-card flex flex-col items-center group">
+            <div class="relative mb-4">
+                <img src="shivam_sharma.png" class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover transition duration-500">
+                <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-bold h-8 w-8 flex items-center justify-center rounded-full border-2 border-gray-950">45</span>
+            </div>
+            <h3 class="font-bold text-center text-lg">Shivam Sharma</h3>
+            <p class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">BATSMAN</p>
+        </div>
+
+        <div class="player-card flex flex-col items-center group">
+            <div class="relative mb-4">
+                <img src="p5.jpg" class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover transition duration-500">
+                <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-bold h-8 w-8 flex items-center justify-center rounded-full border-2 border-gray-950">00</span>
+            </div>
+            <h3 class="font-bold text-center text-lg">Reserve Player</h3>
+            <p class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Spin Bowler</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="py-20 bg-black/50">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+            <h2 class="text-3xl font-black uppercase mb-4 text-orange-500">Our Home Ground</h2>
+            <p class="text-gray-400 mb-6 italic text-sm">Training hard at the heart of Gwalior. Come watch us play or join our net sessions.</p>
+            <div class="flex items-center gap-4 text-sm text-gray-300">
+                <i class="fa-solid fa-location-dot text-orange-500"></i>
+                <span>Gwalior, Madhya Pradesh</span>
+            </div>
+        </div>
+        <div class="h-64 rounded-2xl overflow-hidden border border-gray-800">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114543.51406822442!2d78.07727829726563!3d26.2135017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3976c5d1792291fb%3A0xff4fb56d65bc3ad!2sGwalior%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1711111111111" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-black border-t border-gray-900 py-16 text-center">
+    <div class="flex justify-center gap-8 mb-8 text-2xl text-gray-600">
+        <a href="https://wa.me/" class="hover:text-green-500 transition"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="#" class="hover:text-pink-500 transition"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+    <p class="text-xs text-gray-600 uppercase tracking-[0.5em] mb-4">&copy; 2026 JSM Cricket Club</p>
+    <div class="h-px w-10 bg-gray-800 mx-auto mb-4"></div>
+    <p class="text-[10px] text-gray-700 italic font-serif">Har Har Mahadev • Jai Shree Mahakal</p>
+</footer>
 
 </body>
 </html>
