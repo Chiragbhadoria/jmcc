@@ -15,9 +15,12 @@
             background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=80');
             background-size: cover; background-position: center;
         }
+        .player-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); scale: 1; opacity: 1; }
+        .player-card.hidden { scale: 0.8; opacity: 0; display: none; }
         .player-card:hover img { transform: scale(1.1) rotate(2deg); filter: grayscale(0); }
         .player-img { filter: grayscale(0.5); transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; }
         .orange-glow { text-shadow: 0 0 20px rgba(234, 88, 12, 0.5); }
+        .filter-btn.active { background-color: #ea580c; color: white; border-color: #ea580c; }
     </style>
 </head>
 <body class="text-white">
@@ -42,9 +45,17 @@
 </header>
 
 <section id="squad" class="py-20 px-6 max-w-7xl mx-auto">
+
+    <div class="flex flex-wrap justify-center gap-4 mb-16" data-aos="fade-down">
+        <button onclick="filterSquad('all')" class="filter-btn active px-6 py-2 rounded-full border border-white/10 text-[10px] font-black uppercase tracking-widest transition">All Warriors</button>
+        <button onclick="filterSquad('batsman')" class="filter-btn px-6 py-2 rounded-full border border-white/10 text-[10px] font-black uppercase tracking-widest transition hover:bg-white/5">Batsmen</button>
+        <button onclick="filterSquad('bowler')" class="filter-btn px-6 py-2 rounded-full border border-white/10 text-[10px] font-black uppercase tracking-widest transition hover:bg-white/5">Bowlers</button>
+        <button onclick="filterSquad('all-rounder')" class="filter-btn px-6 py-2 rounded-full border border-white/10 text-[10px] font-black uppercase tracking-widest transition hover:bg-white/5">All-Rounders</button>
+    </div>
+
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-16 gap-x-8">
 
-        <div class="player-card flex flex-col items-center group" data-aos="fade-up" data-aos-delay="100">
+        <div class="player-card flex flex-col items-center group" data-category="all-rounder" data-aos="fade-up" data-aos-delay="100">
             <div onclick="openPlayerStats('pankaj_sharma')" class="relative mb-4">
                 <img src="pankaj_sharma.png" class="player-img w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover shadow-2xl">
                 <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-black h-8 w-8 flex items-center justify-center rounded-full border-2 border-gray-950">01</span>
@@ -54,7 +65,7 @@
             <button onclick="openPlayerStats('pankaj_sharma')" class="text-[8px] text-gray-500 uppercase font-black tracking-tighter hover:text-orange-500">View Stats →</button>
         </div>
 
-        <div class="player-card flex flex-col items-center group" data-aos="fade-up" data-aos-delay="150">
+        <div class="player-card flex flex-col items-center group" data-category="batsman" data-aos="fade-up" data-aos-delay="150">
             <div onclick="openPlayerStats('neeraj_sharma')" class="relative mb-4">
                 <img src="neeraj_sharma.png" class="player-img w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover">
                 <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-black h-8 w-8 flex items-center justify-center rounded-full border-2 border-gray-950">45</span>
@@ -64,7 +75,7 @@
             <button onclick="openPlayerStats('neeraj_sharma')" class="text-[8px] text-gray-500 uppercase font-black tracking-tighter hover:text-orange-500">View Stats →</button>
         </div>
 
-        <div class="player-card flex flex-col items-center group" data-aos="fade-up" data-aos-delay="200">
+        <div class="player-card flex flex-col items-center group" data-category="batsman" data-aos="fade-up" data-aos-delay="200">
             <div onclick="openPlayerStats('ratnesh_dixit')" class="relative mb-4">
                 <img src="ratnesh_dixit.png" class="player-img w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover">
                 <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-black h-8 w-8 flex items-center justify-center rounded-full border-2 border-gray-950">07</span>
@@ -74,9 +85,9 @@
             <button onclick="openPlayerStats('ratnesh_dixit')" class="text-[8px] text-gray-500 uppercase font-black tracking-tighter hover:text-orange-500">View Stats →</button>
         </div>
 
-        <div class="player-card flex flex-col items-center group" data-aos="fade-up" data-aos-delay="250">
+        <div class="player-card flex flex-col items-center group" data-category="bowler" data-aos="fade-up" data-aos-delay="250">
             <div onclick="openPlayerStats('shrikant_pachauri')" class="relative mb-4">
-                <img src="shrikant_pachori.png" class="player-img w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover">
+                <img src="shrikant_pachauri.png" class="player-img w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover">
                 <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-black h-8 w-8 flex items-center justify-center rounded-full border-2 border-gray-950">22</span>
             </div>
             <h3 class="font-bold text-lg">Shrikant Pachauri</h3>
@@ -84,7 +95,7 @@
             <button onclick="openPlayerStats('shrikant_pachauri')" class="text-[8px] text-gray-500 uppercase font-black tracking-tighter hover:text-orange-500">View Stats →</button>
         </div>
 
-        <div class="player-card flex flex-col items-center group" data-aos="fade-up" data-aos-delay="300">
+        <div class="player-card flex flex-col items-center group" data-category="all-rounder" data-aos="fade-up" data-aos-delay="300">
             <div onclick="openPlayerStats('ashu_jadon')" class="relative mb-4">
                 <img src="aashu_jadon.png" class="player-img w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover">
                 <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-black h-8 w-8 flex items-center justify-center rounded-full border-2 border-gray-950">65</span>
@@ -94,7 +105,7 @@
             <button onclick="openPlayerStats('ashu_jadon')" class="text-[8px] text-gray-500 uppercase font-black tracking-tighter hover:text-orange-500">View Stats →</button>
         </div>
 
-        <div class="player-card flex flex-col items-center group" data-aos="fade-up" data-aos-delay="100">
+        <div class="player-card flex flex-col items-center group" data-category="batsman" data-aos="fade-up" data-aos-delay="100">
             <div onclick="openPlayerStats('sonu_sharma')" class="relative mb-4">
                 <img src="sonu_sharma.png" class="player-img w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover">
                 <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-black h-8 w-8 flex items-center justify-center rounded-full border-2 border-gray-950">44</span>
@@ -104,7 +115,7 @@
             <button onclick="openPlayerStats('sonu_sharma')" class="text-[8px] text-gray-500 uppercase font-black tracking-tighter hover:text-orange-500">View Stats →</button>
         </div>
 
-        <div class="player-card flex flex-col items-center group" data-aos="fade-up" data-aos-delay="150">
+        <div class="player-card flex flex-col items-center group" data-category="batsman" data-aos="fade-up" data-aos-delay="150">
             <div onclick="openPlayerStats('kailash_singh')" class="relative mb-4">
                 <img src="kailash_singh.png" class="player-img w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover">
                 <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-black h-8 w-8 flex items-center justify-center rounded-full border-2 border-gray-950">08</span>
@@ -114,7 +125,7 @@
             <button onclick="openPlayerStats('kailash_singh')" class="text-[8px] text-gray-500 uppercase font-black tracking-tighter hover:text-orange-500">View Stats →</button>
         </div>
 
-        <div class="player-card flex flex-col items-center group" data-aos="fade-up" data-aos-delay="200">
+        <div class="player-card flex flex-col items-center group" data-category="all-rounder" data-aos="fade-up" data-aos-delay="200">
             <div onclick="openPlayerStats('raunak_singh')" class="relative mb-4">
                 <img src="raunak_singh.png" class="player-img w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover">
                 <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-black h-8 w-8 flex items-center justify-center rounded-full border-2 border-gray-950">26</span>
@@ -124,7 +135,7 @@
             <button onclick="openPlayerStats('raunak_singh')" class="text-[8px] text-gray-500 uppercase font-black tracking-tighter hover:text-orange-500">View Stats →</button>
         </div>
 
-        <div class="player-card flex flex-col items-center group" data-aos="fade-up" data-aos-delay="250">
+        <div class="player-card flex flex-col items-center group" data-category="all-rounder" data-aos="fade-up" data-aos-delay="250">
             <div onclick="openPlayerStats('aman_sikarwar')" class="relative mb-4">
                 <img src="aman_sikarwar.png" class="player-img w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover">
                 <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-black h-8 w-8 flex items-center justify-center rounded-full border-2 border-gray-950">17</span>
@@ -134,7 +145,7 @@
             <button onclick="openPlayerStats('aman_sikarwar')" class="text-[8px] text-gray-500 uppercase font-black tracking-tighter hover:text-orange-500">View Stats →</button>
         </div>
 
-        <div class="player-card flex flex-col items-center group" data-aos="fade-up" data-aos-delay="300">
+        <div class="player-card flex flex-col items-center group" data-category="all-rounder" data-aos="fade-up" data-aos-delay="300">
             <div onclick="openPlayerStats('deepak_yadav')" class="relative mb-4">
                 <img src="deepak_yadav.png" class="player-img w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover">
                 <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-black h-8 w-8 flex items-center justify-center rounded-full border-2 border-gray-950">17</span>
@@ -144,7 +155,7 @@
             <button onclick="openPlayerStats('deepak_yadav')" class="text-[8px] text-gray-500 uppercase font-black tracking-tighter hover:text-orange-500">View Stats →</button>
         </div>
 
-        <div class="player-card flex flex-col items-center group" data-aos="fade-up" data-aos-delay="100">
+        <div class="player-card flex flex-col items-center group" data-category="all-rounder" data-aos="fade-up" data-aos-delay="100">
             <div onclick="openPlayerStats('ankit_dhanoriya')" class="relative mb-4">
                 <img src="ankit_dhanoriya.png" class="player-img w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover">
                 <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-black h-8 w-8 flex items-center justify-center rounded-full border-2 border-gray-950">03</span>
@@ -154,7 +165,7 @@
             <button onclick="openPlayerStats('ankit_dhanoriya')" class="text-[8px] text-gray-500 uppercase font-black tracking-tighter hover:text-orange-500">View Stats →</button>
         </div>
 
-        <div class="player-card flex flex-col items-center group" data-aos="fade-up" data-aos-delay="150">
+        <div class="player-card flex flex-col items-center group" data-category="batsman" data-aos="fade-up" data-aos-delay="150">
             <div onclick="openPlayerStats('inder_solanki')" class="relative mb-4">
                 <img src="indar_solanki.png" class="player-img w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover">
                 <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-black h-8 w-8 flex items-center justify-center rounded-full border-2 border-gray-950">17</span>
@@ -164,7 +175,7 @@
             <button onclick="openPlayerStats('inder_solanki')" class="text-[8px] text-gray-500 uppercase font-black tracking-tighter hover:text-orange-500">View Stats →</button>
         </div>
 
-        <div class="player-card flex flex-col items-center group" data-aos="fade-up" data-aos-delay="200">
+        <div class="player-card flex flex-col items-center group" data-category="batsman" data-aos="fade-up" data-aos-delay="200">
             <div onclick="openPlayerStats('chirag_bhadoria')" class="relative mb-4">
                 <img src="chirag_bhadoria.png" class="player-img w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover">
                 <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-black h-8 w-8 flex items-center justify-center rounded-full">03</span>
@@ -174,7 +185,7 @@
             <button onclick="openPlayerStats('chirag_bhadoria')" class="text-[8px] text-gray-500 uppercase font-black tracking-tighter hover:text-orange-500">View Stats →</button>
         </div>
 
-        <div class="player-card flex flex-col items-center group" data-aos="fade-up" data-aos-delay="250">
+        <div class="player-card flex flex-col items-center group" data-category="batsman" data-aos="fade-up" data-aos-delay="250">
             <div onclick="openPlayerStats('shivam_sharma')" class="relative mb-4">
                 <img src="shivam_sharma.png" class="player-img w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover">
                 <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-black h-8 w-8 flex items-center justify-center rounded-full border-2 border-gray-950">45</span>
@@ -184,13 +195,13 @@
             <button onclick="openPlayerStats('shivam_sharma')" class="text-[8px] text-gray-500 uppercase font-black tracking-tighter hover:text-orange-500">View Stats →</button>
         </div>
 
-        <div class="player-card flex flex-col items-center group" data-aos="fade-up" data-aos-delay="300">
+        <div class="player-card flex flex-col items-center group" data-category="bowler" data-aos="fade-up" data-aos-delay="300">
             <div onclick="openPlayerStats('reserve_player')" class="relative mb-4">
                 <img src="reserve_player.png" class="player-img w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gray-900 object-cover">
                 <span class="absolute bottom-1 right-1 bg-orange-600 text-white text-[10px] font-black h-8 w-8 flex items-center justify-center rounded-full border-2 border-gray-950">00</span>
             </div>
             <h3 class="font-bold text-lg">Reserve Player</h3>
-            <p class="text-[9px] uppercase tracking-widest text-gray-500 font-bold mb-2"></p>
+            <p class="text-[9px] uppercase tracking-widest text-gray-500 font-bold mb-2">Bowler</p>
             <button onclick="openPlayerStats('reserve_player')" class="text-[8px] text-gray-500 uppercase font-black tracking-tighter hover:text-orange-500">View Stats →</button>
         </div>
 
@@ -244,7 +255,7 @@
 
 <footer class="py-16 text-center border-t border-white/5 bg-black">
     <p class="text-[10px] text-gray-600 uppercase tracking-[0.5em] mb-4">© 2026 JMCC Cricket Club • Gwalior</p>
-    <p class="text-[11px] text-orange-900 italic font-serif">Har Har Mahadev • Jai Shree Mahakal</p>
+    <p class="text-[11px] text-orange-900 italic font-serif">Har Har Mah महादेव • Jai Shree Mahakal</p>
 </footer>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -271,7 +282,7 @@
         "reserve_player": "https://cricheroes.in/player-profile/294942/chirag-bhadoria"
     };
 
-    // 3. Action Function
+    // 3. Action Function (Open Stats)
     function openPlayerStats(playerName) {
         const url = playerStats[playerName];
         if (url && url !== "https://cricheroes.in/player-profile/...") {
@@ -279,6 +290,32 @@
         } else {
             alert("Stats coming soon for this warrior!");
         }
+    }
+
+    // 4. Smart Filter Logic
+    function filterSquad(category) {
+        // Handle button styles
+        const buttons = document.querySelectorAll('.filter-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+
+        // Handle card visibility
+        const cards = document.querySelectorAll('.player-card');
+
+        cards.forEach(card => {
+            const playerCat = card.getAttribute('data-category');
+
+            if (category === 'all' || playerCat === category) {
+                card.classList.remove('hidden');
+                // Brief timeout to allow CSS to reset, then apply animation
+                setTimeout(() => {
+                    card.classList.add('aos-animate');
+                }, 50);
+            } else {
+                card.classList.add('hidden');
+                card.classList.remove('aos-animate'); // Reset animation state
+            }
+        });
     }
 </script>
 </body>
